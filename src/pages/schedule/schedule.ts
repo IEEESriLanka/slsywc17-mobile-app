@@ -14,12 +14,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'schedule.html',
 })
 export class SchedulePage {
+  public segment: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SchedulePage');
   }
 
+  public updateSchedule(){
+
+  }
 }

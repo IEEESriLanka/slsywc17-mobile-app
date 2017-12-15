@@ -6,5 +6,15 @@
 
 
 <ion-content padding>
-
+  <ion-segment [(ngModel)]="segment" (ionChange)="updateSchedule()">
+    <ion-segment-button value="day1">
+      Day 1
+    </ion-segment-button>
+    <ion-segment-button value="day2">
+      Day 2
+    </ion-segment-button>
+    <ion-segment-button value="day3">
+      Day 3
+    </ion-segment-button>
+  </ion-segment>
 </ion-content>
