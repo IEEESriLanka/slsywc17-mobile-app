@@ -19,7 +19,6 @@ export class TabsPage {
   delegatesRoot = 'DelegatesPage'
   infoRoot = 'InfoPage'
 
-
   constructor(public navCtrl: NavController) {}
 
 }
