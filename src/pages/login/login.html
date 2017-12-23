@@ -1,0 +1,32 @@
+<ion-content padding>
+  <div text-center class="animated fadeIn">
+    <!--<ion-img id="logo-img" class="main-logo" src="../../assets/imgs/logo.png"></ion-img>-->
+    <ion-img id="logo-img" class="main-logo" src="https://image.ibb.co/dxbuEm/logo.png"></ion-img>
+  </div>
+  <form #loginForm="ngForm" (ngSubmit)="login(name, email, telephone)" autocomplete="off">
+    <ion-row>
+      <ion-col>
+        <ion-list inset>
+          <ion-item>
+            <ion-input placeholder="Full name" name="fullname" id="nameField" type="text" required [(ngModel)]="name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="Email" name="email" id="emailField" type="text" required [(ngModel)]="email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input placeholder="Telephone" name="telephone" id="telephoneField" type="text" required [(ngModel)]="telephone"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div *ngIf="error">
+          {{error}}
+        </div>
+        <button ion-button class="submit-btn" full type="submit" [disabled]="!loginForm.form.valid">Login
+        </button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

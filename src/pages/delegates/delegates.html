@@ -1,62 +1,25 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Delegates</ion-title>
-  </ion-navbar>
-</ion-header>
-
+<!--<ion-header>-->
+  <!--<ion-searchbar class="delegate-search"-->
+    <!--[(ngModel)]="myInput"-->
+    <!--[showCancelButton]="shouldShowCancel"-->
+    <!--(ionInput)="onInput($event)"-->
+    <!--(ionCancel)="onCancel($event)">-->
+  <!--</ion-searchbar>-->
+<!--</ion-header>-->
 
 <ion-content padding>
-  <ion-searchbar
-    [(ngModel)]="myInput"
-    [showCancelButton]="shouldShowCancel"
-    (ionInput)="onInput($event)"
-    (ionCancel)="onCancel($event)">
-  </ion-searchbar>
+  <div padding></div>
   <ion-list>
-    <ion-item>
-      <ion-avatar item-start>
-        <img src="../../assets/imgs/oshan.jpg">
-      </ion-avatar>
-      <h2>Oshan Mudannayake</h2>
-      <p>I love CS!</p>
-    </ion-item>
-    <ion-item>
-      <ion-avatar item-start>
-        <img src="../../assets/imgs/oshan.jpg">
-      </ion-avatar>
-      <h2>Oshan Mudannayake</h2>
-      <p>I love CS!</p>
-    </ion-item>
-    <ion-item>
-      <ion-avatar item-start>
-        <img src="../../assets/imgs/oshan.jpg">
-      </ion-avatar>
-      <h2>Oshan Mudannayake</h2>
-      <p>I love CS!</p>
-    </ion-item>
-    <ion-item>
-      <ion-avatar item-start>
-        <img src="../../assets/imgs/oshan.jpg">
-      </ion-avatar>
-      <h2>Oshan Mudannayake</h2>
-      <p>I love CS!</p>
-    </ion-item>
-    <ion-item>
-      <ion-avatar item-start>
-        <img src="../../assets/imgs/oshan.jpg">
-      </ion-avatar>
-      <h2>Oshan Mudannayake</h2>
-      <p>I love CS!</p>
-    </ion-item>
-    <ion-item>
-      <ion-avatar item-start>
-        <img src="../../assets/imgs/oshan.jpg">
-      </ion-avatar>
-      <h2>Oshan Mudannayake</h2>
-      <p>I love CS!</p>
+    <ion-item *ngFor="let delegate of friends">
+      <h2>{{delegate.name}}</h2>
+      <h3>{{delegate.email}}</h3>
+      <p>{{delegate.telephone}}</p>
     </ion-item>
   </ion-list>
+  <ion-fab bottom left>
+    <button ion-fab color="primary" (click)="show($event)"><ion-icon name="barcode"></ion-icon></button>
+  </ion-fab>
   <ion-fab bottom right>
-    <button ion-fab color="primary">+</button>
+    <button ion-fab color="primary" (click)="scan($event)"><ion-icon name="person-add"></ion-icon></button>
   </ion-fab>
 </ion-content>

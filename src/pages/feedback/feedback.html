@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar class="back-head">
+    <ion-title>Feedback</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="back" padding>
+  <ion-item>
+    <ion-textarea [(ngModel)]="comment" placeholder="Leave a comment.."></ion-textarea>
+  </ion-item>
+  <button ion-button padding type="submit" block (click)='submitFeedback(comment)'>Submit feedback</button>
+</ion-content>
