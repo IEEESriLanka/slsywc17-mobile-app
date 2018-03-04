@@ -1,0 +1,7 @@
+--Cordova fix
+
+The Mighty Chris is right, that is the problem and he fixed it upstream (thank you Chris!). However just to add to his answer, for people like me who cannot update cordova-android to include the patch, the fix is (for cordova-android v6.4.0):
+
+find the path <project_root>/platforms/android/cordova/lib/emulator.js
+find the line avd.target = 'Android ' + level.semver + ' (API level ' + api_level + ')';
+replace it with avd.target = 'Android ' + (level ? level.semver : '') + ' (API level ' + api_level + ')';
